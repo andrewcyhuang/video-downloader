@@ -1,24 +1,34 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Card, Typography } from '@material-ui/core'
+import _ from 'lodash'
 
-import chunk from 'lodash/chunk';
+import { Video } from '../common/types'
 
 class DownloadList extends Component {
-
-    renderList() {
-        return (
-            <div>
-                List of Downloads
-            </div>
-        )
-    }
-
     render() {
         return (
             <ul className="download-list">
-                {this.renderList()}
+                {
+                    _.map(_.keysIn(this.props), (video: Video) => {
+                        return (
+                            <div key={video.id}>
+                                <Card>
+                                    <Typography color="textPrimary" gutterBottom>
+                                        {video.title}
+                                    </Typography>
+                                </Card>
+                            </div>
+                        )
+                    })
+                }
             </ul>
         )
     }
 }
 
-export default DownloadList;
+function mapStateToProps(state) {
+    return {...state.videos }
+}
+
+export default connect(mapStateToProps)(DownloadList);

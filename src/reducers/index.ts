@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
 import videoReducer from './video_reducer';
 

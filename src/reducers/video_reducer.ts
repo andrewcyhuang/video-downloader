@@ -1,12 +1,16 @@
 import {
-    ActionTypes,
-    VideoActionType
+    ActionTypeDefs,
+    ApplicationState,
+    ActionType
 } from '../common/types'
 
-export default (state = [], action: VideoActionType) => {
+export default (state: ApplicationState = {}, action: ActionType) => {
     switch(action.type) {
-        case ActionTypes.VIDEO_ADD:
-            return [ ...state, { ...action.payload }]
+        case ActionTypeDefs.VIDEO_ADD:
+            const currId: string = action.payload.id;
+            return {
+                videos: {...state.videos, currId: action.payload }
+            }
         default:
             return state
     }
