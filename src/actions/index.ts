@@ -1,13 +1,18 @@
 import { ipcRenderer } from 'electron'
-import { ActionTypeDefs } from '../common/types'
+import { ActionTypeDefs, Video } from '../common/types'
 
 export const videoAdd = url => dispatch => {
-    ipcRenderer.send(ActionTypeDefs.VIDEO_ADD, url)
+    ipcRenderer.send('video::added', url)
     ipcRenderer.on('metadata::complete', (event, videoInfo) => {
+        const { id, fulltitle, webpage_url, thumbnail, _duration_hms } = videoInfo
         dispatch({
             type: ActionTypeDefs.VIDEO_ADD,
             payload: {
-                ...videoInfo
+                id,
+                fulltitle,
+                webpage_url,
+                thumbnail,
+                _duration_hms
             }
         })
     })

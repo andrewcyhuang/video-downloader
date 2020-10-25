@@ -7,10 +7,17 @@ import {
 export default (state: ApplicationState = {}, action: ActionType) => {
     switch(action.type) {
         case ActionTypeDefs.VIDEO_ADD:
-            const currId: string = action.payload.id;
-            return {
-                videos: {...state.videos, currId: action.payload }
+            const currId: string = action.payload.id
+            console.log(`VIDEO_ADD REDUCER TRIGGERED: ${currId}`)
+            console.log(state)
+            const newState: ApplicationState = {
+                ...state,
+                videos: {
+                    ...state.videos, 
+                    [currId]: action.payload }
             }
+            console.log(newState)
+            return newState
         default:
             return state
     }

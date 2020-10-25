@@ -1,34 +1,41 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Card, Typography } from '@material-ui/core'
 import _ from 'lodash'
 
-import { Video } from '../common/types'
+import { VideoInfo } from './VideoInfo'
 
-class DownloadList extends Component {
+import { Video, VideoList } from '../common/types'
+import { Paper, List } from '@material-ui/core'
+
+interface MapStateToProps { videos: VideoList }
+
+class DownloadList extends Component<MapStateToProps> {
     render() {
         return (
-            <ul className="download-list">
-                {
-                    _.map(_.keysIn(this.props), (video: Video) => {
-                        return (
-                            <div key={video.id}>
-                                <Card>
-                                    <Typography color="textPrimary" gutterBottom>
-                                        {video.title}
-                                    </Typography>
-                                </Card>
-                            </div>
-                        )
-                    })
-                }
-            </ul>
+            <Paper style={{backgroundColor: '#85cdcb'}}>
+                <ul className="download-list">
+                    <List>
+                        {
+                            _.map(this.props.videos, (video: Video) => {
+                                console.log(`inside map: ${JSON.stringify(video)}`)
+                                console.log(`before return: ${video.id}`)
+                                return (
+                                    <div key={video.id}>
+                                        <VideoInfo videoInfo={video}/>
+                                    </div>
+                                )
+                            })
+                        }
+                    </List>
+                </ul>
+            </Paper>
         )
     }
 }
 
 function mapStateToProps(state) {
-    return {...state.videos }
-}
+    const { videos } = state.videos
+    return { videos };
+  }
 
 export default connect(mapStateToProps)(DownloadList);

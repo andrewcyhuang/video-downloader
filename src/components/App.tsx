@@ -26,7 +26,7 @@ const theme = createMuiTheme({
         contrastText: '#000',
       },
       background: {
-          default: '#88bdbc'
+          default: '#41b3a3'
       }
     },
 });
@@ -37,7 +37,6 @@ class App extends Component {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <div style={{ textAlign: "center"}}>
-                    
                     <Grid container justify="center">
                         <Grid item xs={2} sm={6}>
                             <Typography variant="h2" component="div">
@@ -52,7 +51,7 @@ class App extends Component {
                     </Grid>
                     <Grid container justify="center">
                         <Grid item xs={2} sm={6}>
-                            <DownloadList/>
+                            <DownloadList style={{height: "100%", paddingTop: 5,}}/>
                         </Grid>
                     </Grid>
                 </div>

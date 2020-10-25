@@ -1,5 +1,4 @@
 import { Action } from 'redux'
-import { videoAdd, downloadStart, downloadProgress, downloadComplete } from '../actions'
 
 // Action Types
 export enum ActionTypeDefs {
@@ -38,12 +37,10 @@ export type ActionType =
 
 export interface Video {
     id: string,
-    title: string,
-    url: string,
+    fulltitle: string,
+    webpage_url: string,
     thumbnail: any,
-    description: string,
-    _filename: string,
-    format_id: string
+    _duration_hms: string
 }
 
 export interface VideoList {
@@ -51,6 +48,6 @@ export interface VideoList {
 }
 
 export interface ApplicationState {
-    readonly videos?: VideoList
+    videos?: VideoList
 }
 
