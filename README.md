@@ -2,7 +2,7 @@
 
 ## About Video Downloader
 
-Video Downloader is a desktop app that provides an elegant GUI for the youtube-dl open-source command-line program to download videos from YouTube.com and a may other sites.
+Video Downloader is a desktop app that provides an elegant GUI for the youtube-dl open-source command-line program to download videos from YouTube.com and many other sites.
 
 Video Downloader is built with a React front-end, Redux for state management, wrapped up with electron into a simple, elegant desktop application.
 
