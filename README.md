@@ -4,8 +4,6 @@
 
 Video Downloader is a desktop app that provides an elegant GUI for the youtube-dl open-source command-line program to download videos from YouTube.com and a may other sites.
 
-We use Python for JSON file parsing and React for the user interface. Every so often, our MongoDB database updates valuation and performance metrics on 791 TSX-listed Canadian equities for further screening.
-
 Video Downloader is built with a React front-end, Redux for state management, wrapped up with electron into a simple, elegant desktop application.
 
 ### How It Works
