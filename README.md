@@ -1,7 +1,4 @@
-<h1 align="center">🍁 Cadviz Equities Screener 🍁</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-</p>
+<h1 align="center">Video Downloader</h1>
 
 ## About Video Downloader
 
