@@ -18,8 +18,5 @@ clone the repo and run these commands in the root directory:
 
 ```sh
 npm install
-```
-
-```sh
 npm run electron-dev
 ```
